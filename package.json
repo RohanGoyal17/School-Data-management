@@ -1,0 +1,24 @@
+{
+ "name": "MySite",
+ "version": "0.0.1",
+ "private": true,
+ "main": "app.js",
+ "scripts": {
+  "start": "node app.js"
+ },
+ "dependencies": {
+  "cfenv": "1.0.x",
+  "express": "3.0.0alpha4",
+  "fusioncharts": "^3.16.0",
+  "jade": "^1.7.0",
+  "mongodb": "^3.6.4",
+  "nib": "^1.0.4",
+  "react": "^17.0.1",
+  "react-fusioncharts": "^3.1.2",
+  "stylus": "^0.49.1"
+ },
+ "repository": {},
+ "engines": {
+  "node": "10.*"
+ }
+}
