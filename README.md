@@ -1,5 +1,6 @@
 # School data management system
 
+Online instance at <https://rohan-school.eu-gb.cf.appdomain.cloud/>
 
 ## Run the app locally
 
