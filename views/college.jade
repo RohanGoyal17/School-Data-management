@@ -1,0 +1,88 @@
+doctype html
+html
+  head
+    title #{title} - College Manager
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h1 Colleges
+    block content
+    table
+        thead
+        tr
+            th ID
+            th Name
+            th Year of Foundation
+            th City
+            th State
+            th Country
+            th Number of Students
+            th Courses
+            
+        tbody
+        each mongo_result, i in collegeList
+            tr
+                td= mongo_result.id
+                td= mongo_result.Name
+                td= mongo_result.Year
+                td= mongo_result.City
+                td= mongo_result.State
+                td= mongo_result.Country
+                td= mongo_result.Num
+                td= mongo_result.Courses
+                //-td #[a(href="/college?id="+mongo_result.id) visit]
+
+    br
+    b 
+      p(style="padding:20px; font-family:'Lucida Console', 'Courier New', monospace;") Similar Colleges:
+    table
+        thead
+        tr
+            th ID
+            th Name
+            th Year of Foundation
+            th City
+            th State
+            th Country
+            th Number of Students
+            th Courses
+            th
+            
+        tbody
+        each mongo_result, i in simcollegeList
+            tr
+                td= mongo_result.id
+                td= mongo_result.Name
+                td= mongo_result.Year
+                td= mongo_result.City
+                td= mongo_result.State
+                td= mongo_result.Country
+                td= mongo_result.Num
+                td= mongo_result.Courses
+                td #[a(href="/college?id="+mongo_result.id) visit]
+    
+    br
+    b 
+      p(style="padding:20px; font-family:'Lucida Console', 'Courier New', monospace;") Students Enrolled:
+    
+    table
+        thead
+        tr
+            th ID
+            th Name
+            th batch
+            //-th college id
+            th
+            th skills
+            
+        tbody
+        each mongo_result, i in student
+            tr
+            td= mongo_result.id
+            td= mongo_result.Name
+            td= mongo_result.Batch
+            //-td= mongo_result.CollegeID
+            td #[a(href="/student?id="+mongo_result.id) view]
+            td= mongo_result.Skills
+   
+    

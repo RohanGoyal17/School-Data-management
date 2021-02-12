@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title #{title} - College Manager
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/graph.css')
+    script(src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js")
+  body
+    header
+      h1 Courses
+    style
+
+    block content
+    table(class="graph")
+        //-caption courses offered 
+        //-thead
+        //-tr
+            th(scope="col") Item
+            th(scope="col") Percent
+            
+        tbody
+            tr(style="height:"+ '#{c1}' +"%")
+                th(scope="row") CSE
+                td(style="height:94.2%" onClick="parent.location = '/course/0'")
+                    span #{c1}
+            tr(style="height:"+ '#{c2}' +"%")
+                th(scope="row") ECE
+                td(onClick="parent.location = '/course/1'")
+                    span #{c2}
+            tr(style="height:"+ '#{c3}' +"%")
+                th(scope="row") ENI
+                td(onClick="parent.location = '/course/2'")
+                    span #{c3}
+            tr(style="height:"+ '#{c4}' +"%")
+                th(scope="row") Mechanical
+                td(onClick="parent.location = '/course/3'")
+                    span #{c4}
+            tr(style="height:"+ '#{c5}' +"%")
+                th(scope="row") Civil
+                td(onClick="parent.location = '/course/4'")
+                    span #{c5}
+
+    //-<caption>Bar Chart HTML From HTML Table</caption>
+    //-<thead>
+        <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Percent</th>
+        </tr>
+   

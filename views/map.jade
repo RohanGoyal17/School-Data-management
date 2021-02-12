@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title #{title} - College Manager
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body(style="background:white;")
+    header
+      h1 Locations
+    img(src="map.jpg" style="width:685px; display: block; allign:centre;  margin-left: auto;  margin-right: auto;" alt="Workplace" usemap="#workmap")
+    map(name="workmap")
+        area(shape="circle" coords="118,355,10" alt="Coffee" href="/country?id=Tuvalu" title="Tuvalu")
+        area(shape="circle" coords="176,240,10" alt="Coffee" href="/country?id=Cayman%20Islands" title="Cayman Islands")
+        area(shape="circle" coords="185,298,10" alt="Coffee" href="/country?id=Peru" title="Peru")
+        area(shape="circle" coords="348,274,10" alt="Coffee" href="/country?id=Nigeria" title="Nigeria")
+        area(shape="circle" coords="352,178,10" alt="Coffee" href="/country?id=Belarus" title="Belarus")
+        area(shape="circle" coords="371,199,10" alt="Coffee" href="/country?id=Montenegro" title="Montenegro")
+
+
+
+  

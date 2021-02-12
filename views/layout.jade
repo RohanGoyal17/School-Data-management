@@ -1,0 +1,63 @@
+doctype html
+html
+  head
+    title #{title} - College Manager
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h1 Dashboard
+    div(class="wrap")
+        div(class="search" style="padding:10px;")
+            input(type="number" class="searchTerm" id="quantity" name="quantity" placeholder="Enter college ID")
+            script.
+                 function redir(){
+                 var inp = document.getElementById("quantity").value; 
+                 parent.location="/college?id="+inp;
+                 }
+            button(type="submit" class="searchButton" onClick="redir()")
+                p GO
+            //-br
+        div(style="width:100%; padding:10px;")
+            button(onClick="parent.location = '/location'" style="width:48%; margin-left:0px;" class="redir")
+                p Locations
+            button(onClick="parent.location = '/streams'" style="width:48%; margin-right:0px;" class="redir")
+                p Courses
+    
+    //-input(type=button onClick="redir()" value='click here')
+    
+    
+//-<div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+   </div>
+
+    //-div(id="piechart")
+    //-script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
+    //-script.
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work', 8],
+        ['Eat', 2],
+        ['TV', 4],
+        ['Gym', 2],
+        ['Sleep', 8]
+      ]);
+
+  
+      var options = {'title':'Countries', 'width':550, 'height':400};
+
+  
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart.draw(data, options);
+      }
+
+   

@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title #{title} - College Manager
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h1 Student Record
+    block content
+    table
+        thead
+        tr
+            th ID
+            th Name
+            th batch
+            th college
+            th skills
+            
+        tbody
+        each mongo_result, i in student
+            tr
+            td= mongo_result.id
+            td= mongo_result.Name
+            td= mongo_result.Batch
+            td= mongo_result.CollegeID
+            td= mongo_result.Skills
+
+   
+
+    
